@@ -2,17 +2,23 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/JaroslavRusanov/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/JaroslavRusanov/frontend-project-46/actions)",
-  "main": "gendiff.js",
+  "main": "./src/index.js",
   "bin": {
-    "gendiff": "./gendiff.js"
+    "gendiff": "./bin/gendiff.js"
   },
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Iaroslav Rusanov sco.nuff@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "fs": "^0.0.1-security"
+  },
+  "dependencies": {
     "commander": "^11.1.0"
   }
 }
