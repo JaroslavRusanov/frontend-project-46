@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Iaroslav Rusanov sco.nuff@gmail.com",
   "license": "ISC",
@@ -16,9 +16,11 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "jest": "^29.7.0"
   },
   "dependencies": {
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "lodash": "^4.17.21"
   }
 }

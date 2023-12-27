@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import getParseFile from '../src/index.js';
+import { genDiff } from '../src/index.js';
 
 const program = new Command();
 
@@ -14,11 +14,7 @@ program.command('first', 'second', 'option')
   .argument('<second>', 'path to file 2')
   .option('-f, --format <type>', 'output format')
   .action((first, second, option = 'JSON') => {
-    const parsedFile1 = getParseFile(first);
-    console.log(parsedFile1);
-    const parsedFile2 = getParseFile(second);
-    console.log(parsedFile2);
-    console.log(option);
+    console.log(genDiff(first, second));
   });
 
 program.parse();
