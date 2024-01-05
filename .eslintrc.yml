@@ -1,9 +1,14 @@
+plugins:
+  - jest
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
   browser: true
   es2021: true
-extends: airbnb-base
+extends: 
+  - airbnb-base
+  - plugin:jest/recommended
 parserOptions:
-  ecmaVersion: latest
+  ecmaVersion: 2020
   sourceType: module
 rules: 
   no-console: 0
@@ -11,3 +16,4 @@ rules:
     - error
     - ignorePackages
     - js: always
+  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
