@@ -1,13 +1,12 @@
-import { realpathSync, readFileSync } from 'fs';
+import fs from 'fs';
 import _ from 'lodash';
 
 const getParseFile = (path) => {
-  const absPathFile = realpathSync(path);
-  console.log(absPathFile);
+  const absPathFile = fs.realpathSync(path);
   if (!absPathFile.endsWith('.json')) {
     return null;
   }
-  return JSON.parse(readFileSync(absPathFile));
+  return JSON.parse(fs.readFileSync(absPathFile));
 };
 
 const genDiff = (path1, path2) => {
@@ -36,7 +35,7 @@ const genDiff = (path1, path2) => {
     }
     return str;
   });
-  console.log(`{\n${result.join('\n')}\n}`);
+  // console.log(`{\n${result.join('\n')}\n}`);
   return `{\n${result.join('\n')}\n}`;
 };
 
