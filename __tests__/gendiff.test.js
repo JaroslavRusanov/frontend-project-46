@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { genDiff, getParseFile } from '../src/index.js';
+import genDiff from '../src/index.js';
+import getParseFile from '../src/parsers.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,8 +15,14 @@ test('testing parse', () => {
   expect(getParseFile(filePath)).toBeTruthy();
 });
 
-test('getting diff to string', () => {
-  const filePath1 = getFixturePath('file1.json');
-  const filePath2 = getFixturePath('file2.json');
-  expect(genDiff(filePath1, filePath2)).toEqual(readFile('expectFileStylish.txt'));
+test('testing gendiff JSON', () => {
+  const filePathJSON1 = getFixturePath('file1.json');
+  const filePathJSON2 = getFixturePath('file2.json');
+  expect(genDiff(filePathJSON1, filePathJSON2)).toEqual(readFile('expectFileStylish.txt'));
+});
+
+test('testing gendiff YAML', () => {
+  const filePathYAML1 = getFixturePath('file1.yaml');
+  const filePathYAML2 = getFixturePath('file2.yaml');
+  expect(genDiff(filePathYAML1, filePathYAML2)).toEqual(readFile('expectFileStylish.txt'));
 });

@@ -1,15 +1,7 @@
-import fs from 'fs';
 import _ from 'lodash';
+import getParseFile from './parsers.js';
 
-const getParseFile = (path) => {
-  const absPathFile = fs.realpathSync(path);
-  if (!absPathFile.endsWith('.json')) {
-    return null;
-  }
-  return JSON.parse(fs.readFileSync(absPathFile));
-};
-
-const genDiff = (path1, path2) => {
+export default (path1, path2) => {
   const fileFirst = getParseFile(path1);
   const fileSecond = getParseFile(path2);
 
@@ -35,8 +27,5 @@ const genDiff = (path1, path2) => {
     }
     return str;
   });
-  // console.log(`{\n${result.join('\n')}\n}`);
   return `{\n${result.join('\n')}\n}`;
 };
-
-export { getParseFile, genDiff };
