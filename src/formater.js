@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export default (data, replacer = ' ', spacesCount = 4) => {
   const iter = (currentData, depth) => {
     const indentSize = depth * spacesCount;
@@ -10,21 +8,17 @@ export default (data, replacer = ' ', spacesCount = 4) => {
       .entries(currentData)
       .map(([key, val]) => {
         const status = val.changing;
-        switch(status) {
+        switch (status) {
           case 'both':
             return `${diffIndent}- ${key}: ${val.value1}\n${diffIndent}+ ${key}: ${val.value2}`;
-            break;
           case 'deleted':
             return `${diffIndent}- ${key}: ${val.value1}`;
-            break;
           case 'added':
             return `${diffIndent}+ ${key}: ${val.value2}`;
-            break;
           case 'unchanged':
             return `${diffIndent}  ${key}: ${val.value1}`;
-            break;
           default:
-          return `${currentIndent}${key}: ${iter(val, depth + 1)}`
+            return `${currentIndent}${key}: ${iter(val, depth + 1)}`;
         }
       });
     return [
