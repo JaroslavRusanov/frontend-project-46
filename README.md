@@ -7,4 +7,4 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f30e374893fe4917e448/test_coverage)](https://codeclimate.com/github/JaroslavRusanov/frontend-project-46/test_coverage)
 
-[![Asciinema](https://asciinema.org/a/630791)](https://asciinema.org/a/630791)
+[Asciinema](https://asciinema.org/a/630791)
