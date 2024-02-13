@@ -12,10 +12,9 @@ program
 program.command('first', 'second', 'option')
   .argument('<first>', 'path to file 1')
   .argument('<second>', 'path to file 2')
-  .option('-f, --format <type>', 'output format')
-  .action((first, second, option) => {
-    console.log(genDiff(first, second));
-    console.log(option);
+  .option('-f, --format <type>', 'output format', 'stylish')
+  .action((first, second) => {
+    console.log(genDiff(first, second, program.opts().format));
   });
 
 program.parse();
