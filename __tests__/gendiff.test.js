@@ -26,3 +26,9 @@ test('testing plain YAML', () => {
   const filePathYAML2 = getFixturePath('file2.yaml');
   expect(genDiff(filePathYAML1, filePathYAML2, 'plain')).toEqual(readFile('expectFilePlain.txt'));
 });
+
+test('testing json formatting', () => {
+  const filePathYAML1 = getFixturePath('file1.yaml');
+  const filePathYAML2 = getFixturePath('file2.yaml');
+  expect(genDiff(filePathYAML1, filePathYAML2, 'json')).toEqual(readFile('diffJSON.txt'));
+});

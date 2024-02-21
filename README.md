@@ -7,8 +7,23 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f30e374893fe4917e448/test_coverage)](https://codeclimate.com/github/JaroslavRusanov/frontend-project-46/test_coverage)
 
-[Asciinema with plain files](https://asciinema.org/a/630791)
 
-[Asciinema with nested files](https://asciinema.org/a/638137)
+This is a student project by Hexlet course of JavaScript developer. It determines the difference between two data structures.
 
-[Asciinema plain format](https://asciinema.org/a/642100)
+Support for different input formats: yaml, json. Generating reports in the form of plain text, stylish and json.
+
+Install
+```
+make install
+```
+System
+```
+Node.js version v18.15.0
+```
+Examples:
+
+[Asciinema with plain files json](https://asciinema.org/a/630791)
+
+[Asciinema with nested files json and yaml in stylish format](https://asciinema.org/a/638137)
+
+[Asciinema difference in plain format](https://asciinema.org/a/642100)
