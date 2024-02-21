@@ -1,8 +1,10 @@
 import _ from 'lodash';
 import getParseFile from './parsers.js';
 
-const getSortedKeys = (data1, data2) => _.uniq(Object.keys(data1)
-  .concat(Object.keys(data2))).sort();
+const getSortedKeys = (data1, data2) => {
+  const commonKeys = _.union(_.keys(data1), _.keys(data2));
+  return _.sortBy(commonKeys);
+};
 
 export default (path1, path2) => {
   const file1 = getParseFile(path1);
