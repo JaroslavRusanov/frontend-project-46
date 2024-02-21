@@ -10,3 +10,5 @@
 [Asciinema with plain files](https://asciinema.org/a/630791)
 
 [Asciinema with nested files](https://asciinema.org/a/638137)
+
+[Asciinema plain format](https://asciinema.org/a/642100)

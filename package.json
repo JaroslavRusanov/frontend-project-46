@@ -10,6 +10,9 @@
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "verbose": true
+  },
   "author": "Iaroslav Rusanov sco.nuff@gmail.com",
   "license": "ISC",
   "devDependencies": {

@@ -15,14 +15,14 @@ test('testing parse', () => {
   expect(getParseFile(filePath)).toBeTruthy();
 });
 
-test('testing gendiff JSON', () => {
+test('testing stylish JSON', () => {
   const filePathJSON1 = getFixturePath('file1.json');
   const filePathJSON2 = getFixturePath('file2.json');
   expect(genDiff(filePathJSON1, filePathJSON2)).toEqual(readFile('expectFileStylish.txt'));
 });
 
-test('testing gendiff YAML', () => {
+test('testing plain YAML', () => {
   const filePathYAML1 = getFixturePath('file1.yaml');
   const filePathYAML2 = getFixturePath('file2.yaml');
-  expect(genDiff(filePathYAML1, filePathYAML2)).toEqual(readFile('expectFileStylish.txt'));
+  expect(genDiff(filePathYAML1, filePathYAML2, 'plain')).toEqual(readFile('expectFilePlain.txt'));
 });
