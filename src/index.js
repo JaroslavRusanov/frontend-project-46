@@ -32,13 +32,12 @@ const dataTree = (path1, path2) => {
         if (_.isObject(data1[key]) && _.isObject(data2[key])) {
           acc[key] = iter(data1[key], data2[key]);
           return acc;
-        } else if (data1[key] === data2[key]) {
+        } if (data1[key] === data2[key]) {
           acc[key] = { changing: 'unchanged', value: data1[key] };
           return acc;
-        } else {
-          acc[key] = { changing: 'changed', value1: data1[key], value2: data2[key] };
-          return acc;
         }
+        acc[key] = { changing: 'changed', value1: data1[key], value2: data2[key] };
+        return acc;
       }
       return acc;
     }, {});
