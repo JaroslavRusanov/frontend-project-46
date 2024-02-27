@@ -15,7 +15,7 @@ export default (data) => {
       .entries(currentData)
       .map(([key, val]) => {
         switch (val.changing) {
-          case 'both':
+          case 'changed':
             return `Property '${[...names, key].join('.')}' was updated. From ${stringifyValue(val.value1)} to ${stringifyValue(val.value2)}`;
           case 'deleted':
             return `Property '${[...names, key].join('.')}' was removed`;
@@ -23,8 +23,10 @@ export default (data) => {
             return `Property '${[...names, key].join('.')}' was added with value: ${stringifyValue(val.value)}`;
           case undefined:
             return iter(val, [[...names, key].join('.')]);
-          default:
+          case 'unchanged':
             return null;
+          default:
+            throw new Error('error plain formatter');
         }
       })
       .filter((el) => el !== null);

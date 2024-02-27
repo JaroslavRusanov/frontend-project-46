@@ -11,7 +11,7 @@ export default (data, replacer = ' ', spacesCount = 4) => {
     }
     const lines = Object.entries(currentData).map(([key, val]) => {
       switch (val.changing) {
-        case 'both':
+        case 'changed':
           return `${diffIndent}- ${key}: ${iter(val.value1, depth + 1)}\n${diffIndent}+ ${key}: ${iter(val.value2, depth + 1)}`;
         case 'deleted':
           return `${diffIndent}- ${key}: ${iter(val.value, depth + 1)}`;
@@ -19,8 +19,10 @@ export default (data, replacer = ' ', spacesCount = 4) => {
           return `${diffIndent}+ ${key}: ${iter(val.value, depth + 1)}`;
         case 'unchanged':
           return `${diffIndent}  ${key}: ${iter(val.value, depth + 1)}`;
-        default:
+        case undefined:
           return `${currentIndent}${key}: ${iter(val, depth + 1)}`;
+        default:
+          throw new Error('error stylish formatter');
       }
     });
     return ['{', ...lines, `${bracketIndent}}`].join('\n');

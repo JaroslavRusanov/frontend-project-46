@@ -1,10 +1,13 @@
-import fs from 'fs';
 import yaml from 'js-yaml';
 
-export default (path) => {
-  const absPathFile = fs.realpathSync(path);
-  if (absPathFile.endsWith('.json')) {
-    return JSON.parse(fs.readFileSync(absPathFile, 'utf-8'));
+export default (data, fileExtension) => {
+  switch (fileExtension) {
+    case 'json':
+      return JSON.parse(data);
+    case 'yml':
+    case 'yaml':
+      return yaml.load(data);
+    default:
+      throw new Error('cant parsing file');
   }
-  return yaml.load(fs.readFileSync(absPathFile, 'utf-8'));
 };

@@ -1,16 +1,18 @@
-import genDiff from '../diffTree.js';
 import stylish from './stylish.js';
 import plain from './plain.js';
 import json from './json.js';
 
-const writeDiff = (filepath1, filepath2, formatName = 'stylish') => {
-  if (formatName === 'plain') {
-    return plain(genDiff(filepath1, filepath2));
+const writeDiff = (data, formatName = 'stylish') => {
+  switch (formatName) {
+    case ('plain'):
+      return plain(data);
+    case ('json'):
+      return json(data);
+    case ('stylish'):
+      return stylish(data);
+    default:
+      throw new Error('unknown format');
   }
-  if (formatName === 'json') {
-    return json(genDiff(filepath1, filepath2));
-  }
-  return stylish(genDiff(filepath1, filepath2));
 };
 
 export default writeDiff;
