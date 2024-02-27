@@ -39,7 +39,6 @@ const dataTree = (path1, path2) => {
     }, {});
     return tree;
   };
-  console.log(JSON.stringify(iter(file1, file2), null, '    '));
   return iter(file1, file2);
 };
 
