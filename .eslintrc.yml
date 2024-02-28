@@ -1,18 +1,15 @@
 plugins:
   - jest
-# https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
-  browser: true
-  es2021: true
+  node: true
 extends: 
   - airbnb-base
   - plugin:jest/recommended
 parserOptions:
-  ecmaVersion: 2020
-  sourceType: module
+  ecmaVersion: latest
 rules: 
   no-console: 0
-  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
+  import/extensions:
     - error
     - ignorePackages
     - js: always

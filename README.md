@@ -7,7 +7,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f30e374893fe4917e448/test_coverage)](https://codeclimate.com/github/JaroslavRusanov/frontend-project-46/test_coverage)
 
-#Generator of difference
+# Generator of difference
 
 This is a student project by Hexlet course of JavaScript developer. It determines the difference between two data structures.
 
