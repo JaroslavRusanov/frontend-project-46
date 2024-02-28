@@ -1,3 +1,5 @@
+/* eslint no-restricted-syntax: ["off", "no-mutation"] */
+
 import _ from 'lodash';
 
 const getSortedKeys = (data1, data2) => {
