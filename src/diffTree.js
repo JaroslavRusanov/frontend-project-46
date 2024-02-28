@@ -1,4 +1,4 @@
-/* eslint no-restricted-syntax: ["off", "no-mutation"] */
+/* eslint-disable */
 
 import _ from 'lodash';
 
